@@ -1,6 +1,5 @@
 { config, lib, ... }: {
   imports = [
-    ./atuin.nix
     ./base-packages.nix
     ./bat.nix
     ./bottom.nix

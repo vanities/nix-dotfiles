@@ -9,29 +9,35 @@
       NSGlobalDomain = {
         AppleInterfaceStyle = "Dark";
         AppleKeyboardUIMode = 3;
+        AppleShowAllExtensions = true;
+
         NSDocumentSaveNewDocumentsToCloud = false;
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticDashSubstitutionEnabled = false;
         NSAutomaticPeriodSubstitutionEnabled = false;
         NSAutomaticQuoteSubstitutionEnabled = false;
         NSAutomaticSpellingCorrectionEnabled = false;
+
+        # 120, 90, 60, 30, 12, 6, 2
+        KeyRepeat = 2;
+
+        # 120, 94, 68, 35, 25, 15
+        InitialKeyRepeat = 15;
       };
 
       dock = {
+        autohide = true;
         enable-spring-load-actions-on-all-items = true;
         mouse-over-hilite-stack = true;
 
         mineffect = "genie";
-        orientation = "left";
+        orientation = "bottom";
         show-recents = false;
         tilesize = 44;
 
         persistent-apps = [
           "${pkgs.firefox-bin}/Applications/Firefox.app"
           "${pkgs.kitty}/Applications/Kitty.app"
-          "/Applications/Microsoft Teams (work or school).app"
-          "/Applications/Microsoft Outlook.app"
-          "/Applications/Microsoft Remote Desktop.app"
         ];
       };
 
@@ -39,6 +45,7 @@
         FXPreferredViewStyle = "clmv";
         FXDefaultSearchScope = "SCcf";
         FXEnableExtensionChangeWarning = false;
+        _FXShowPosixPathInTitle = false;
         QuitMenuItem = true;
       };
 
@@ -62,4 +69,3 @@
     };
   };
 }
-

@@ -3,13 +3,13 @@
     systemPackages = with pkgs; [
       curl
       git
-      helix
+      neovim
       wget
     ];
 
     variables = {
-      EDITOR = lib.getExe pkgs.helix;
-      VISUAL = lib.getExe pkgs.helix;
+      EDITOR = lib.getExe pkgs.nvim;
+      VISUAL = lib.getExe pkgs.nvim;
     };
   };
 }

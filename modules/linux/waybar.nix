@@ -4,7 +4,6 @@ let
     name = "waybar-scripts";
     paths = with pkgs; [
       (writeShellScriptBin "waybar-decrypted" (builtins.readFile ./bin/waybar-decrypted))
-      (writeShellScriptBin "waybar-mail" (builtins.readFile ./bin/waybar-mail))
       (writeShellScriptBin "waybar-progress" (builtins.readFile ./bin/waybar-progress))
       (writeShellScriptBin "waybar-recording" (builtins.readFile ./bin/waybar-recording))
       (writeShellScriptBin "waybar-systemd" (builtins.readFile ./bin/waybar-systemd))
@@ -26,7 +25,6 @@ let
     buildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
       wrapProgram $out/bin/waybar-decrypted --prefix PATH : $out/bin
-      wrapProgram $out/bin/waybar-mail      --prefix PATH : $out/bin
       wrapProgram $out/bin/waybar-progress  --prefix PATH : $out/bin
       wrapProgram $out/bin/waybar-recording --prefix PATH : $out/bin
       wrapProgram $out/bin/waybar-systemd   --prefix PATH : $out/bin
@@ -54,7 +52,6 @@ in
         "custom/yubikey"
         "custom/decrypted"
         "custom/systemd"
-        "custom/mail"
         "custom/recording"
         "custom/dnd"
         "pulseaudio"
@@ -99,15 +96,6 @@ in
         exec = "${app}/bin/waybar-systemd";
         return-type = "json";
         interval = 10;
-      };
-
-      "custom/mail" = {
-        format-icons = {
-          icon = "<span foreground='#928374'> </span>";
-        };
-        format = "{icon}{}";
-        exec = "${app}/bin/waybar-mail";
-        return-type = "json";
       };
 
       "custom/dnd" = {
@@ -258,7 +246,6 @@ in
 
       #custom-usbguard,
       #custom-decrypted,
-      #custom-mail,
       #battery.warning,
       #disk.warning,
       #memory.warning,
@@ -291,7 +278,6 @@ in
       #custom-yubikey,
       #custom-decrypted,
       #custom-systemd,
-      #custom-mail,
       #network,
       #cpu,
       #disk,
@@ -318,7 +304,6 @@ in
       #battery,
       #clock,
       #cpu,
-      #custom-mail,
       #custom-progress,
       #custom-recording,
       #custom-systemd,

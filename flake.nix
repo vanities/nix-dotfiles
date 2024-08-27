@@ -1,5 +1,5 @@
 {
-  description = "maximbaz";
+  description = "vanities";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -34,8 +34,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    maximbaz-private.url = "git+file:///home/maximbaz/.dotfiles-private";
-
     push2talk = {
       url = "github:cyrinux/push2talk";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -58,7 +56,7 @@
   };
 
   outputs = inputs:
-    let globals = { user = "maximbaz"; }; in rec {
+    let globals = { user = "vanities"; }; in rec {
       nixosConfigurations = {
         home-manitoba = import ./hosts/home-manitoba { inherit inputs globals; };
       };

@@ -2,15 +2,14 @@
   home-manager.users.${config.user}.home.packages = with pkgs; [
     (python3.withPackages (ps: with ps; [
       pyyaml
-      # pynacl
-      # pylint
-      # tldextract
-      # isort
-      # black
-      # pip
+       pynacl
+       pylint
+       tldextract
+       isort
+       black
+       pip
     ]))
 
-    azure-cli
     bash
     bat
     coreutils
@@ -33,19 +32,19 @@
     kubernetes-helm
     kubectl
     kubectx
-    # less
-    # nodePackages.prettier
-    # openssh
+    less
+    nodePackages.prettier
+    openssh
     # sshpass
     # patch
     # rust-analyzer
     # shellcheck
-    #terraform
+    terraform
     # unixtools.watch
     #vault
-    # wget
-    # wireguard-go
-    # which
+    wget
+    wireguard-go
+    which
     # yq
     # zstd
 
@@ -67,7 +66,6 @@
     go
     jq
     magic-wormhole-rs
-    maximbaz-scripts
     pass
     perlPackages.vidir
     pigz

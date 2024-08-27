@@ -9,15 +9,12 @@ switch flags="": git-add
     nix run -- nix-darwin switch --flake $HOME/.dotfiles {{flags}}
 
 trace: (switch "--show-trace")
-    
+
 home: git-add
     nix run -- home-manager switch --flake $HOME/.dotfiles#$(hostname)
 
 update: git-add
     nix flake update
-
-update-private: git-add
-    nix flake lock --update-input maximbaz-private
 
 git-add:
     git -C $HOME/.dotfiles add --intent-to-add --all
